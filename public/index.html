@@ -12,13 +12,14 @@
         <meta name="copyright" content="Nino678190">
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" type="image/x-icon" href="#">
-        <script src="script.js"></script>
+        <script async src="https://cdn.jsdelivr.net/npm/appwrite@21.4.0"></script>
+        <script defer src="script.js"></script>
         <title>
             Jobtracker
         </title>
     </head>
     <body>
-        <header><img src="" alt="Logo"><button id="login">Start</button></header>
+        <header><img src="" alt="Logo"><button onclick="showLoginForm()" id="login">Start</button></header>
         <noscript>Wird angezeigt wenn JS deaktiviert ist oder nicht funktioniert</noscript>
         <main>
             <h1>Welcome to Jobtracker</h1>
@@ -28,14 +29,14 @@
         <dialog id="loginDialog">
             <h2>Login</h2>
             <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
                 <br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
                 <br>
                 <section>
-                    <button type="submit">Login</button>
+                    <button type="button" onclick="login()">Login</button>
                     <button type="button" id="closeLogin">Close</button>
                 </section>
             </form>
@@ -43,8 +44,8 @@
         <dialog>
             <h2>Register</h2>
             <form id="registerForm">
-                <label for="newUsername">Username:</label>
-                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="regiEmail">Email:</label>
+                <input type="email" id="regiEmail" name="regiEmail" required>
                 <br>
                 <label for="newPassword">Password:</label>
                 <input type="password" id="newPassword" name="newPassword" required>

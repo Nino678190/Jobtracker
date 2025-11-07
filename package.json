@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Nino678190/Jobtracker#readme",
   "dependencies": {
     "appwrite": "^21.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
   }
