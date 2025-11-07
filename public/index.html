@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Stichpunkte, für, Google">
+        <meta name="description" content="Der kurze Text der Angezeigt wird bei Google">
+        <meta name="author" content="Nino678190">
+        <base href="index.html"><!--- Basis Seite--->
+        <meta name="robots" content="index"><!---Erlauben das Webcrawler auf Webseite dürfen. Sonste "noindex"--->
+        <meta name="robots" content="follow"> <!---Erlauben das Webcrawler auf Webseiten navigieren dürfen. Sonst "nofollow"--->
+        <meta name="copyright" content="Nino678190">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="#">
+        <script src="script.js"></script>
+        <title>
+            Jobtracker
+        </title>
+    </head>
+    <body>
+        <header><img src="" alt="Logo"><button id="login">Start</button></header>
+        <noscript>Wird angezeigt wenn JS deaktiviert ist oder nicht funktioniert</noscript>
+        <main>
+            <h1>Welcome to Jobtracker</h1>
+            <p>Your one-stop solution for tracking job applications and managing your career.</p>
+        
+        </main>
+        <dialog id="loginDialog">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <section>
+                    <button type="submit">Login</button>
+                    <button type="button" id="closeLogin">Close</button>
+                </section>
+            </form>
+        </dialog>
+        <dialog>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <br>
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <br>
+                <section>
+                    <button type="submit">Register</button>
+                    <button type="button" id="closeRegister">Close</button>
+                </section>
+            </form>
+        </dialog>
+        <footer>
+            <p>&copy; <span id="year">2025</span> Jobtracker. All Code is published under the GNU PL 3.0 License. </p>
+        </footer>
+        </body>
+</html>

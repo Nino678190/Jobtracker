@@ -1,0 +1,19 @@
+{
+  "name": "jobtracker",
+  "version": "1.0.0",
+  "description": "Get an Overview over your applied jobs",
+  "main": "app.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nino678190/Jobtracker.git"
+  },
+  "author": "Nino678190",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Nino678190/Jobtracker/issues"
+  },
+  "homepage": "https://github.com/Nino678190/Jobtracker#readme"
+}
