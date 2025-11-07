@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Stichpunkte, für, Google">
+        <meta name="description" content="Der kurze Text der Angezeigt wird bei Google">
+        <meta name="author" content="Nino678190">
+        <base href="index.html">
+        <meta name="robots" content="index">
+        <meta name="robots" content="follow">
+        <meta name="copyright" content="Nino678190">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="#">
+        <script src="script.js"></script>
+        <title>
+            Jobtracker
+        </title>
+    </head>
+    <body>
+        <header><img src="" alt="Logo"><button id="login">Start</button></header>
+        <noscript>Wird angezeigt wenn JS deaktiviert ist oder nicht funktioniert</noscript>
+        <main>
+            <form>
+                <h1>Add Job Application</h1>
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company" required maxlength="100">
+                <br>
+                <label for="title">Job Title</label>
+                <input type="text" id="title" name="title" required maxlength="200">
+                <br>
+                <label for="description">Description</label>
+                <textarea id="description" name="description" maxlength="3000"></textarea>
+                <label for="location">Job Location</label>
+                <input type="text" id="location" name="location" maxlength="300">
+                <br>
+                <label for="salary">Salary</label>
+                <input type="number" id="salary" name="salary">
+                <br>
+                <label for="status">Application Status:</label>
+                <select id="status" name="status">
+                    <option value="applied">Applied</option>
+                    <option value="interview">Interview</option>
+                    <option value="hr">HR Interview</option>
+                    <option value="first">First Interview</option>
+                    <option value="second">Second Interview</option>
+                    <option value="third">Third Interview</option>
+                    <option value="culture">Culture Fit Interview</option>
+                    <option value="offer">Offer</option>
+                </select>
+                <br>
+                <label for="key_tasks">Key Tasks (Seperated with ;)</label>
+                <input type="text" id="key_tasks" name="key_tasks" maxlength="500">
+                <br>
+                <button type="button" onclick="addApplication(event)">Add Application</button>
+            </form>
+        </main>
+        <footer>
+            <p>&copy; <span id="year">2025</span> Jobtracker. All Code is published under the GNU PL 3.0 License. </p>
+        </footer>
+    </body>
+
+</html>

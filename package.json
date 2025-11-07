@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Nino678190/Jobtracker/issues"
   },
-  "homepage": "https://github.com/Nino678190/Jobtracker#readme"
+  "homepage": "https://github.com/Nino678190/Jobtracker#readme",
+  "dependencies": {
+    "appwrite": "^21.4.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
 }
