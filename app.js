@@ -18,7 +18,7 @@ app.use(express.json());
 app.post('/api/application', async (req, res) => {
     const data = req.body;
     console.log(data)
-    const stage = Array.isArray(data.stage) ? data.stage : [data.stage];
+    const stage = Array.isArray(data.status) ? data.status : [data.status];
     const salary = parseInt(data.salary, 10);
     try {
         let promise = TablesDB.createRow({
@@ -44,10 +44,7 @@ app.post('/api/application', async (req, res) => {
             ],
         });
         promise.then(function(response){
-            console.log(response)
-            if (response.status === 201){
-                return res.status(201).send("Added Successfully")
-            }
+            return res.status(201).send("Added Successfully")
         }, function (error) {
             res.status(error.code).json(error.response)
             console.error(error)
