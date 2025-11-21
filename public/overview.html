@@ -21,47 +21,19 @@
     </title>
 </head>
 
-<body>
+<body onload="displayData()">
     <header><img src="" alt="Logo"><button id="login">Start</button></header>
-    <noscript>Wird angezeigt wenn JS deaktiviert ist oder nicht funktioniert</noscript>
+    <noscript>Is displayed when JS is deactivated. Please activate it, so the website can run.</noscript>
     <main>
-        <h1>Welcome to Jobtracker</h1>
-        <p>Your one-stop solution for tracking job applications and managing your career.</p>
-
+        <h1>Overview over your Job Applications</h1>
+        <section id="diagramContainer"></section>
     </main>
-    <dialog id="loginDialog">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <section>
-                <button type="submit">Login</button>
-                <button type="button" id="closeLogin">Close</button>
-            </section>
-        </form>
-    </dialog>
-    <dialog>
-        <h2>Register</h2>
-        <form id="registerForm">
-            <label for="newUsername">Username:</label>
-            <input type="text" id="newUsername" name="newUsername" required>
-            <br>
-            <label for="newPassword">Password:</label>
-            <input type="password" id="newPassword" name="newPassword" required>
-            <br>
-            <section>
-                <button type="submit">Register</button>
-                <button type="button" id="closeRegister">Close</button>
-            </section>
-        </form>
-    </dialog>
     <footer>
         <p>&copy; <span id="year">2025</span> Jobtracker. All Code is published under the GNU PL 3.0 License. </p>
     </footer>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    </script>
 </body>
 
 </html>
