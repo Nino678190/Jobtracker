@@ -1,9 +1,11 @@
+const { Account, Databases, Query } = Appwrite;
+
 const client = new Appwrite.Client()
     .setEndpoint("https://fra.cloud.appwrite.io/v1")
     .setProject("690e41bb001b23b7fce1");
 
-const account = new Appwrite.Account(client)
-const databases = new Appwrite.Databases(client);
+const account = new Account(client);
+const databases = new Databases(client);
 
 
 
@@ -65,18 +67,22 @@ function register(){
 
 function addApplication(event) {
     event.preventDefault();
+    console.log("Adding application...");
     checkAuthStatus();
+    console.log("User ID from sessionStorage:", sessionStorage.getItem("userId"));
     const title = document.getElementById("title").value;
     const company = document.getElementById("company").value;
     const date_applied = new Date().toISOString().split("T")[0];
+    console.log("Date Applied:", date_applied);
     const last_interacted = date_applied;
     const status = document.getElementById("status").value;
     const description = document.getElementById("description").value;
     const place = document.getElementById("location").value;
+    console.log("Place:", place);
     const salary = document.getElementById("salary").value;
     const tasks = document.getElementById("key_tasks").value;
     const key_tasks = tasks.split(";").map(task => task.trim()).filter(task => task.length > 0);
-
+    console.log("Key Tasks:", key_tasks);
     console.log(
         {
             title,
@@ -112,7 +118,6 @@ function addApplication(event) {
         .then((response) => {
             if (response.ok) {
                 alert("Application added successfully!");
-                window.location.href = "index.html";
             } else {
                 alert("Failed to add application.");
             }
@@ -135,15 +140,14 @@ function displayData(){
 
 function getApplications(){
     try {
-        return databases.listDocuments(
-            "648f3b2d6ea4a5a5f5b0", 
-            "648f3b3c4dcb2e4f2b2d", 
-            [
-                Appwrite.Query.equal("userId", sessionStorage.getItem("userId"))
-            ]
-        ).then(response => {
-            return response.documents;
-        });
+        let query = [];
+        query.push(Query.equal("userId", toString(sessionStorage.getItem("userId"))));
+        console.log("Fetching applications for userId:", sessionStorage.getItem("userId"));
+        return databases
+            .listDocuments("690e41f1002e854e5f82", "jobs", query)
+            .then((response) => {
+                return response.documents;
+            });
     } catch (error) {
         console.error("Error retrieving applications:", error);
         throw error;
@@ -256,14 +260,14 @@ function displayApplications(applications){
     }
 
     // Render the chart using Mermaid.js
-    const container = document.getElementById('diagramContainer'); 
+    const container = document.getElementById("diagramContainer"); // Assuming you have a div with this id
     if (container) {
         const element = document.createElement('pre');
         element.classList.add('mermaid');
         element.textContent = mermaidData;
         container.innerHTML = ''; // Clear previous content
         container.appendChild(element);
-        mermaid.run({ nodes: [element] });
+        // mermaid.run({ nodes: [element] });
     } else {
         console.error("Container for Sankey diagram not found.");
     }
