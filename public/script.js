@@ -23,7 +23,8 @@ function showLoginForm() {
 }
 
 function closeLoginForm(){
-
+    const loginDialog = document.getElementById("loginDialog");
+    loginDialog.style.display = "none"; 
 }
 
 async function checkAuthStatus() {
